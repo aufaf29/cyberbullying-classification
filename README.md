@@ -19,7 +19,7 @@ POST /predict or /predict-multi
 ## Deployment
 To access deployment endpoint
 ```
-https://cyberbullying-service.herokuapp.com
+http://cyberbullying-service.herokuapp.com
 ```
 
 ## Data Source
