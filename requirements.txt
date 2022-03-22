@@ -8,11 +8,10 @@ Jinja2==3.0.3
 MarkupSafe==2.1.1
 six==1.16.0
 Werkzeug==2.0.3
-string
-wordcloud
+wordcloud==1.8.1
 scikit-learn==1.0.2
-dill
-nltk
-pandas
-imblearn
-xgboost
+dill==0.3.4
+nltk==3.7
+pandas==1.4.1
+imbalanced-learn==0.9.0
+xgboost==1.5.2
