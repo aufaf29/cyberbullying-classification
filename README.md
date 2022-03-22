@@ -3,6 +3,25 @@
 ## Description
 Cyberbullying Classification for The NextDEV Final Assignment
 
+## How to run
+To run server can use this command, and server will run in http://localhost:5000
+```
+flask run
+```
+example request body to preedict with POST METHOD
+```
+POST /predict or /predict-multi
+{
+    "text": "im bullied at school"
+}
+```
+
+## Deployment
+To access deployment endpoint
+```
+https://cyberbullying-service.herokuapp.com
+```
+
 ## Data Source
 1. Cyberbullying Classification Data (Kaggle)
     > J. Wang, K. Fu, C.T. Lu, “SOSNet: A Graph Convolutional Network Approach to Fine-Grained Cyberbullying Detection,” Proceedings of the 2020 IEEE International Conference on Big Data (IEEE BigData 2020), December 10-13, 2020.
