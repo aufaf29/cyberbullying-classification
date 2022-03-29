@@ -1,12 +1,8 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import dill
-import tensorflow as tf
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import sequence
 
 dill._dill._reverse_typemap['ClassType'] = type
-
 
 import pandas as pd
 
@@ -66,25 +62,7 @@ def predict():
             else:
                 label = "Cyberbullying"
                 score = 100 - int(pred_proba_biner * 100)
-        elif(lang == "id-BiLSTM"):
-            f = open("model/model_keras_id/tokenizer.pkl", "rb")
-            tokenizer = dill.load(f)
-            f.close()
 
-            model = load_model('model/model_keras_id/rnn_fasttext.h5')
-
-            data = tokenizer.texts_to_sequences([text])
-            data  = sequence.pad_sequences(data, maxlen=50)
-            
-            with tf.device('/cpu:0'):
-                pred_proba_biner = model.predict(data)[0][0]
-                
-                if (pred_proba_biner >= 0.5):
-                    label = "Not Cyberbullying"
-                    score = int(pred_proba_biner * 100)
-                else:
-                    label = "Cyberbullying"
-                    score = 100 - int(pred_proba_biner * 100)
                 
         
         response = jsonify({
